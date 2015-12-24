@@ -1,8 +1,8 @@
 
 #ifndef GRAPHE
 #define GRAPHE
-#include "liste.h"
 #include "arc.h"
+#include "include.h"
 
 class Graphe{
 private :
@@ -21,7 +21,7 @@ public :
 	bool containscircuit();
 	static Graphe lire(FILE *file);
 	static Liste<Graphe> getdatabase();
-	
+
 	int * calcul_rang();
     bool liste_vide(char** liste,int i);
     bool liste_vide(char** table);

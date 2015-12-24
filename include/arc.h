@@ -2,6 +2,7 @@
 #ifndef ARC
 #define ARC
 #include "liste.h"
+#include "include.h"
 
 class Arc{
 public :

@@ -2,8 +2,7 @@
 
 #ifndef LISTE
 #define LISTE
-#include <iostream>
-using namespace std;
+#include "include.h"
 #include <typeinfo>
 #define isclass(x) (typeid(x)!=typeid(char) && typeid(x)!=typeid(int) && typeid(x)!=typeid(double))
 
@@ -65,21 +64,21 @@ private :
 	//Variables foreach
 	mutable LinkedList *iterator;
 	mutable int index;
-	
+
 	//Fonctions de liste chaînée
 	LinkedList* parcourir(LinkedList *maillon)const{
 		if(maillon->next==NULL) return maillon;
 		else return parcourir(maillon->next);}
-	
+
 	LinkedList* parcourir(LinkedList *maillon, int n)const{
 		if(maillon->next==NULL || n<=0) return maillon;
 		else return parcourir(maillon->next,n-1);}
-	
+
 	void inserer(LinkedList *&maillon1, LinkedList *&maillon2){
 		LinkedList *temp = maillon1;
 		maillon1 = maillon2;
 		maillon1->next = temp;}
-	
+
 	void liberer(LinkedList *maillon){
 		if(maillon){
 			liberer(maillon->next);
@@ -89,36 +88,36 @@ private :
 public :
 	//Constructeurs & destructeur
 	Liste():liste(NULL),iterator(NULL),listsize(0),index(0){}
-	
+
 	Liste(const Liste<Type> &liste){
 		this->liste = NULL;
 		iterator = NULL;
 		listsize = 0;
 		index = 0;
 		while(liste.foreach()) push(liste.get());}
-	
+
 	~Liste(){
 		liberer(liste);
 		liste = NULL;
 		iterator = NULL;
 		listsize = 0;
 		index = 0;}
-	
+
 	//Opérateurs
 	Liste& operator=(const Liste<Type> &liste){
 		this->~Liste();
 		while(liste.foreach()) push(liste.get());
 		return *this;}
-	
+
 	Liste operator+(const Liste<Type> &add)const{
 		Liste liste = *this;
 		while(add.foreach()) liste.push(add.get());
 		return liste;}
-	
+
 	Liste& operator+=(const Liste<Type> &liste){
 		while(liste.foreach()) push(liste.get());
 		return *this;}
-	
+
 	bool operator==(const Liste<Type> &liste)const{
 		if(liste.size()!=listsize) return false;
 		while(liste.foreach() && this->foreach()){
@@ -129,7 +128,7 @@ public :
 		liste.reset();
 		this->reset();
 		return true;}
-	
+
 	bool operator!=(const Liste<Type> &liste)const{
 		if(liste.size()!=listsize) return true;
 		while(liste.foreach() && this->foreach()){
@@ -140,7 +139,7 @@ public :
 		liste.reset();
 		this->reset();
 		return false;}
-	
+
 	friend ostream& operator<<(ostream &os, const Liste<Type> &liste){
 		if(liste.size()>0 && isclass(liste.front())){
 			os << "----------------------------------------" << endl << endl;
@@ -151,7 +150,7 @@ public :
 			while(liste.foreach()) os << liste.get() << " ";
 			os << endl;}
 		return os;}
-	
+
 	Type& operator[](const char *str){
 		LinkedList *maillon = liste;
 		while(maillon){
@@ -161,7 +160,7 @@ public :
 		maillon = parcourir(liste);
 		maillon->label = copier(str);
 		return maillon->data;}
-	
+
 	const Type& operator[](const char *str)const{
 		LinkedList *maillon = liste;
 		while(maillon){
@@ -171,7 +170,7 @@ public :
 		maillon = parcourir(liste);
 		maillon->label = copier(str);
 		return maillon->data;}
-	
+
 	//Modificateurs
 	void push(const Type &val){
 		listsize++;
@@ -187,7 +186,7 @@ public :
 			liste->data = val;
 			liste->label = NULL;
 			liste->next = NULL;}}
-	
+
 	Type pop(int n){
 		listsize--;
 		if(n==0 || liste->next==NULL){
@@ -203,7 +202,7 @@ public :
 			maillon->next = maillon->next->next;
 			delete temp;
 			return val;}}
-	
+
 	void sort(){
 		if(liste){
 			LinkedList *next = liste->next;
@@ -222,7 +221,7 @@ public :
 						test = false;}}
 				liste = next;}
 			liste = sort;}}
-	
+
 	void rsort(){
 		if(liste){
 			LinkedList *next = liste->next;
@@ -241,29 +240,29 @@ public :
 						test = false;}}
 				liste = next;}
 			liste = sort;}}
-	
+
 	void clear(){
 		this->~Liste();}
-	
+
 	//Accesseurs
 	Type& front(){
 		return liste->data;}
-	
+
 	const Type& front()const{
 		return liste->data;}
-	
+
 	Type& back(){
 		return parcourir(liste)->data;}
-	
+
 	const Type& back()const{
 		return parcourir(liste)->data;}
-	
+
 	Type& at(int n){
 		return parcourir(liste,n)->data;}
-	
+
 	const Type& at(int n)const{
 		return parcourir(liste,n)->data;}
-	
+
 	//Fonctions foreach
 	int foreach()const{
 		if(iterator) iterator = iterator->next;
@@ -271,35 +270,35 @@ public :
 		if(iterator) index++;
 		else index = 0;
 		return index;}
-	
+
 	Type& get(){
 		return iterator->data;}
-	
+
 	const Type& get()const{
 		return iterator->data;}
-	
+
 	void reset()const{
 		iterator = NULL;
 		index = 0;}
-	
+
 	//Fonctions de test
 	int size()const{
 		return listsize;}
-	
+
 	int indexOf(const char *id)const{
 		LinkedList *maillon = liste;
 		for(int i=0; maillon; i++){
 			if(!strcmp(maillon->data.getid(),id)) return i;
 			maillon = maillon->next;}
 		return -1;}
-	
+
 	int indexOf(const char *id, int n)const{
 		LinkedList *maillon = liste;
 		for(int i=0; maillon; i++){
 			if(!strncmp(maillon->data.getid(),id,n)) return i;
 			maillon = maillon->next;}
 		return -1;}
-	
+
 	bool contains(const Type &val)const{
 		while(foreach()){
 			if(get()==val){

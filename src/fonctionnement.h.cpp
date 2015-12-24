@@ -1,2 +1,0 @@
-#include "fonctionnement.h.h"
-
