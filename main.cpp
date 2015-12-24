@@ -3,9 +3,11 @@ using namespace std;
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "fonctions.h"
-#include "graphe.h"
-#include "arc.h"
+#include "include/fonctions.h"
+#include "include/graphe.h"
+#include "include/arc.h"
+#include "include/fonctionnement.h"
+
 
 int main(int argc, char *argv[]){
 	cout << "	Lecture de la base de donn\202es..." << endl << endl;
@@ -28,4 +30,7 @@ int main(int argc, char *argv[]){
 	else cout << "D\202mmarage du programme : \202chou\202" << endl << endl;
 	cout << "Fin du programme." << endl;
 	graphes.clear();
-	system("PAUSE");}
+	system("PAUSE");
+
+
+	}

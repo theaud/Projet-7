@@ -3,7 +3,7 @@ using namespace std;
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "graphe.h"
+#include "../include/graphe.h"
 
 //fonctions.h
 char* lirestr(FILE*);
@@ -124,9 +124,9 @@ Liste<Graphe> Graphe::getdatabase(){
 		fclose(file);}
 	else cout << "* Erreur : le fichier graphe.txt est absent ! *" << endl;
 	return graphes;}
-	
-	
-	
+
+
+
 /*
 int nbsommets, nbarcs;
 Liste<Arc> arcs;

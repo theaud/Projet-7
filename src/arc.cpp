@@ -3,7 +3,7 @@ using namespace std;
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "arc.h"
+#include "../include/arc.h"
 
 //fonctions.h
 char* lirestr(FILE*);
