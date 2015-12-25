@@ -145,6 +145,7 @@ while(liste_vide(table)==0 && cmp<nbsommets+1)//temp que toutes les collone ne s
     {rang=actualisation_rang( table,rang,cmp);
     table=suppression(table,rang,cmp);
     cmp++;
+    afficher(table);
     }
 
     rang=actualisation_rang( table,rang,cmp);
