@@ -10,26 +10,10 @@ void partie1()
 
 	if(graphes.size()>0)
         {
-            /*
-		cout << "D\202mmarage du programme : r\202ussi" << endl << endl;
-		cout << graphes;
-		cout << "Table d'adjacence :" << endl;
-		graphes.back().printadjacenttab();
-		saut_ligne(1);
-		cout << "Table multivoques :" << endl;
-		graphes.back().printmultivoquetab();
-		saut_ligne(1);
-		cout << "Fermetures transitives :" << endl;
-		graphes.back().printfermeturetransitive();
-		saut_ligne(1);
-		if(graphes.back().containscircuit()) cout << "Le graphe contient un circuit.";
-		else cout << "Le graphe ne contient pas de circuit.";
-		saut_ligne(2);
-        */
 
 		//------------- affichage selectif -------------------------------------------
-int choix;
-bool continuer=true;
+        int choix;
+        bool continuer=true;
             do{
             saut_ligne(2);
             cout<<"Table d'adjacence :      1"<<endl;

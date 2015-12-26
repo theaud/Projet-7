@@ -131,31 +131,41 @@ Liste<Arc> arcs;
 //pop pour suprimer
 int * Graphe::calcul_rang()
 {
-//----------------- declaration  ---------------------
-    int cmp=0;
-    int * rang=new int[nbsommets];
-    char ** table=getadjacenttab();
-//----------------- initialisation -------------------
-    for(int i=0;i<nbsommets;i++)
-        {rang[i]=-1;}
+    if(!containscircuit())
+    {
 
-//----------------- traitement -----------------------
 
-while(liste_vide(table)==0 && cmp<nbsommets+1)//temp que toutes les collone ne sont pas vide
-    {rang=actualisation_rang( table,rang,cmp);
-    table=suppression(table,rang,cmp);
-    cmp++;
-    afficher(table);
+    //----------------- declaration  ---------------------
+        int cmp=0;
+        int * rang=new int[nbsommets];
+        char ** table=getadjacenttab();
+    //----------------- initialisation -------------------
+        for(int i=0;i<nbsommets;i++)
+            {rang[i]=-1;}
+
+    //----------------- traitement -----------------------
+
+    while(liste_vide(table)==0 && cmp<nbsommets+1)//temp que toutes les collone ne sont pas vide
+        {rang=actualisation_rang( table,rang,cmp);
+        table=suppression(table,rang,cmp);
+        cmp++;
+        afficher(table);
+        }
+
+        rang=actualisation_rang( table,rang,cmp);
+    //-----------------------------------------------
+
+    cout << "Tableau des rangs :"<<endl;
+
+     for(int i=0;i<nbsommets;i++)
+            {cout<<"Sommet :"<<i<<"= rang :"<< rang[i]<<endl;}
+
+    return rang;
     }
+    else{cout <<endl<< "Le graphe contient un circuit , le calcul du rang est donc impossible"<<endl;
+        return NULL;
+        }
 
-    rang=actualisation_rang( table,rang,cmp);
-//-----------------------------------------------
-
-cout << "Tableau des rangs :\n";
- for(int i=0;i<nbsommets;i++)
-        {cout<<"Sommet :"<<i<<"= rang :"<< rang[i]<<endl;}
-
-return rang;
 }
 
 bool Graphe::liste_vide(char** table,int j)
