@@ -3,7 +3,7 @@
 	<ActiveTarget name="Debug" />
 	<File name="include\graphe.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="567" topLine="0" />
+			<Cursor1 position="696" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\include.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -11,14 +11,14 @@
 			<Cursor1 position="286" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\liste.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\liste.h" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2096" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="143" topLine="0" />
+			<Cursor1 position="199" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\arc.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -26,14 +26,19 @@
 			<Cursor1 position="46" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="src\arc.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="include\fonctionnement.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="24" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\arc.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\fonctionnement.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="368" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="include\fonctions.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -41,19 +46,14 @@
 			<Cursor1 position="54" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\fonctionnement.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1974" topLine="31" />
-		</Cursor>
-	</File>
 	<File name="src\fonctions.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="549" topLine="0" />
+			<Cursor1 position="52" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\graphe.cpp" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\graphe.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4456" topLine="125" />
+			<Cursor1 position="3940" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
