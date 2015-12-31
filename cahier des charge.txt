@@ -1,0 +1,97 @@
+-------------------------------------------------------------------------------------
+-----------------------------------importation du graphes----------------------------
+-------------------------------------------------------------------------------------
+
+Votre programme doit être capable de prendre en compte n’importe quel graphe orienté valué, sachant que :
+- Les sommets sont des numéros entiers de ‘0’ à ‘n-1’ pour un graphe contenant ‘n’ sommets ;
+- Les valeurs associées aux graphes sont des nombres entiers quelconques ;
+- Soit x et y deux sommets du graphe : il y a au plus un arc de x vers y. ;
+- Il n’y a pas de boucle ;
+- Il peut y avoir des sommets isolés (sans prédécesseur ni successeur).
+
+-------------------------------------------------------------------------------------
+--------------------------verification a faire -----------------------------------------
+-------------------------------------------------------------------------------------
+importation:
+aucun arc
+le nombre d'arc concorde avec l'arret du "-1"
+ nombre de sommet correct
+synstaxe respecter 
+aucun arc 
+prendre le cas de 0 arc ou 0 sommet 
+verif que le sommet destination/origie d'un arc est un des sommet existant
+fichier pas vide
+
+
+
+-------------------------------------------------------------------------------------
+--------------------------- structure ----------------------------------------
+-------------------------------------------------------------------------------------
+une matrice d’adjacence dans laquelle:
+		 les valeurs ‘vrai’ sont remplacées par la valeur associée à l’arc ; 
+		 les valeurs ‘faux’ sont remplacées par un symbole de votre choix ;
+
+
+- une liste des arcs sous la forme ‘(extrémité initiale , extrémité terminale , valeur)’ ;
+
+
+
+-------------------------------------------------------------------------------------
+-----------------------------fermeture transitive --------------------------------------
+-------------------------------------------------------------------------------------
+calculer le graphe correspondant à la fermeture transitive de celui chargé 
+
+Il s’agit tout simplement de calculer le graphe correspondant à la fermeture transitive de celui chargé par votre programme à l’étape 2.
+Le résultat doit être stocké dans une structure de données similaire à celle utilisée pour le premier graphe.
+En fin de traitement, vous devez reprendre votre code fait pour l’étape 3 pour afficher le résultat de la fermeture transitive.
+Votre programme doit indiquer clairement les résultats intermédiaires de votre algorithme, c’est-à-dire le graphe intermédiaire calculé à chaque itération.
+
+
+Warning faire gaff au boucle infini , detecter si on a un etat deja enoncer(circuit = qui boucle) et autre
+
+-------------------------------------------------------------------------------------
+-------------------------- detection de circuit-----------------------------------
+-------------------------------------------------------------------------------------
+
+Sur la base de la structure de données que vous avez choisie, vous devez écrire une fonction permettant de déterminer si le graphe contient ou non au moins un circuit.
+Vous pouvez utiliser l’une ou l’autre des deux méthodes vues en cours :
+- par l’élimination successive des points d’entrée (et/ou des points de sortie), 
+- par le calcul de la fermeture transitive du graphe.++++++++++++++++++++++++++ faire cele ci XP
+
+Traces d’exécution :
+Votre programme doit indiquer clairement les résultats intermédiaires de votre algorithme, par exemple :
+- pour l’élimination des points d’entrée et/ou des points de sortie : indication du ou des sommets supprimés à chaque étape ;
+- pour le calcul de la fermeture transitive : valeur (matrice) disponible à chaque itération.
+6. Calcul de rang
+Si le
+
+-------------------------------------------------------------------------------------
+-------------------------------Calcul de rang----------------------------------------
+-------------------------------------------------------------------------------------
+Si le graphe ne contient pas de circuit, vous devez calculer un rang pour chaque sommet.
+
+
+-------------------------------------------------------------------------------------
+--------------------------- affichage final premiere partie -------------------------------
+-------------------------------------------------------------------------------------
+En plus des résultats intermédiaires (valeurs de rang données à chaque sommet et ordre d’affectation), votre code doit se terminer par l’affichage synthétique des valeurs pour l’ensemble des sommets.
+
+§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
