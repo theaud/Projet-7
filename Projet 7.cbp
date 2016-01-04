@@ -32,17 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/arc.h" />
-		<Unit filename="include/fonctionnement.h" />
-		<Unit filename="include/fonctions.h" />
-		<Unit filename="include/graphe.h" />
-		<Unit filename="include/include.h" />
-		<Unit filename="include/liste.h" />
+		<Unit filename="arc.cpp" />
+		<Unit filename="arc.h" />
+		<Unit filename="fonctions.h" />
+		<Unit filename="graphe.cpp" />
+		<Unit filename="graphe.h" />
+		<Unit filename="tache.cpp" />
+		<Unit filename="tache.h" />
+		<Unit filename="liste.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/arc.cpp" />
-		<Unit filename="src/fonctionnement.cpp" />
-		<Unit filename="src/fonctions.cpp" />
-		<Unit filename="src/graphe.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
