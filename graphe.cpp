@@ -337,3 +337,108 @@ for(int i = 1; i < nbsommets; i++){
 }
 for (int i = 0; i < nbsommets-1; i++){ cout << " " <<tps[i] << " ";}
 }
+
+//-------------------------------------------------------------------------------------
+//--------------- 9) exo de validation ------------------------------------------------
+//-------------------------------------------------------------------------------------
+bool* getvaliadation();
+{
+    bool* test=new bool[5];
+    test[0]=point_entrer();
+    test[1]=point_sortie();
+    test[2]=no_circuit();
+    test[3]=tous_sommets_accessible()
+    test[4]=tous_sommets_sortie(bool circuit);
+
+return test;
+}
+
+void Graphe::printvalidation()
+{
+    bool* test=getvaliadation();
+
+
+
+
+}
+
+
+bool Graphe::point_entrer()
+{
+    int ** rang=getrangs(false);
+    int cmp=0;
+//----------------------------------------------------
+for(int i=0;i<nbsommets;i++)
+        {if(0==rand[1][i])
+            {cmp++;}
+        }
+//----------------------------------------------------
+    if(cmp==0)
+        {cout<< " WARNING ERROR point d'entrer ";
+        return false;
+        }
+    else if(cmp ==1)    {return true;}
+    else                {return false;}
+
+}
+
+
+bool Graphe::point_sortie()
+{
+    int ** rang=getrangs(false);
+    int min=0;
+    int cmp=0;
+//----------------------------------------------------
+    for(int i=0;i<nbsommets;i++)
+        {if(min>rand[1][i])
+            {min=rand[1][i];}
+        }
+//----------------------------------------------------
+     for(int i=0;i<nbsommets;i++)
+        {if(min==rand[1][i])
+            {cmp++;}
+        }
+//----------------------------------------------------
+    if(cmp==0)
+        {cout<< " WARNING ERROR point de sortie ";
+        return false;
+        }
+    else if(cmp ==1)    {return true;}
+    else                {return false;}
+}
+
+bool Graphe::no_circuit();
+
+bool Graphe::tous_sommets_accessible(bool circuit)
+{if(circuit==true){return false;}
+ //-----------------------------------------------------------
+    int * visiter=new int[nbsommets];
+    for(int i=0;i<nbsommets;i++){visiter[i]=-1;}
+//------------------------------------------------------
+
+//a faire
+
+
+
+
+
+}
+
+bool Graphe::tous_sommets_sortie(bool circuit);
+{
+if(circuit==true){return false;}
+ //-----------------------------------------------------------
+
+    int * tester=new int[nbsommets];
+    for(int i=0;i<nbsommets;i++){tester[i]=-1;}
+ //-----------------------------------------------------------
+
+// a faire
+
+
+
+}
+
+//-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
