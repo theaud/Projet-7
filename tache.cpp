@@ -15,9 +15,16 @@ Tache::Tache(const char* str){
 	str = strchr(str,' ')+1;
 	int n = convertir(str,"%d");
 	while(n>0){
-		contraintes.push(n);
+		if(!contraintes.contains(n)) contraintes.push(n);
 		str = strchr(str,' ')+1;
 		n = convertir(str,"%d");}}
+
+Tache::Tache(int n, int d, const char* str){
+	num = n;
+	duree = d;
+	while(str){
+		if(!contraintes.contains(n)) contraintes.push(convertir(str,"%d"));
+		str = strchr(str+1,' ');}}
 
 bool Tache::operator==(const Tache &tache)const{
 	return num==tache.num;}

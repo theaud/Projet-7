@@ -25,7 +25,7 @@ public :
 	static Liste<Arc> getarcs(Liste<Tache> taches);
 	static Graphe lirecontrainte(FILE *file);
 	static Liste<Graphe> getcontraintes();
-
+	
 	//Fonctions Mathieu
     bool colonne_vide(int** liste,int i);
 
@@ -47,7 +47,6 @@ public :
     bool no_circuit();
     bool tous_sommets_accessible(bool circuit);
     bool tous_sommets_sortie(bool circuit);
-
 };
 
 #endif

@@ -11,6 +11,7 @@ using namespace std;
 //fonctions.h
 int saisirint(const char*,int);
 int saisirint(const char*,int,int);
+char* saisirstr(const char*,const char*);
 
 void menu_graphe(Liste<Graphe> &graphes){
 	int n=1;
@@ -61,28 +62,61 @@ void menu_graphe(Liste<Graphe> &graphes){
 			while(graphes.foreach()){
 				Graphe fermeture = graphes.get().getfermeturetransitive();
 				if(fermeture.containscircuit()) cout << "Pas de calcul de rang car le graphe contient un circuit." << endl;
-				else graphes.get().getrangs(false);
+				else graphes.get().getrangs();
 				cout << endl << "----------------------------------------" << endl << endl;}
 			system("PAUSE");
 		break;}}}
 
 void editer(Liste<Graphe> &graphes){
-	int n=0;
-	if(graphes.size()>1) n = saisirint("S\202l\202ctionnez le graphe que vous souhaitez modifier : ",1,graphes.size())-1;
-	Graphe &graphe = graphes.at(n);
-	cout << graphe;
-	n = saisirint("Saisissez le num\202ro d'une t\203che \205 cr\202er/modifier ou quittez (0) : ",0,graphes.size());
+	int n=1;
+	if(graphes.size()>1) n = saisirint("S\202l\202ctionnez le graphe que vous souhaitez modifier : ",1,graphes.size());
+	Graphe &graphe = graphes.at(n-1);
 	while(n!=0){
-		Tache &tache = graphe.taches.at(n-1);
-		cout << tache << endl;
-		n = saisirint("Modifier la dur\202 (1), Modifier les contraintes (2), Supprimer la t\205che (3) ? ",1,3);
+		system("CLS");
+		cout << graphe << endl;
+		cout << "Menu :" << endl;
+		cout << "1. Cr\202er une t\203che" << endl;
+		cout << "2. Modifier la dur\202 d'une t\203che" << endl;
+		cout << "3. Modifier les contraintes d'une t\203che" << endl;
+		cout << "4. Supprimer une t\203che" << endl;
+		cout << "0. Retour" << endl;
+		n = saisirint("Executer : ",0,4);
 		switch(n){
-		case 1 : tache.duree = saisirint("dur\203 = ",0,100000);
+		case 1 :{
+			int num = graphe.taches.size()+1;
+			cout << "num\202ro de t\203che = " << num << endl;
+			int duree = saisirint("dur\202e = ",0);
+			char *str = saisirstr("contraintes = ","0123456789 ");
+			graphe.taches.push(Tache(num,duree,str));
+			free(str);
+			cout << "T\203che cr\202\202e !" << endl;
+			system("PAUSE");}
 		break;
-		case 2 :
+		case 2 :{
+			int k = saisirint("num\202ro de t\203che = ",1,graphe.taches.size());
+			Tache &tache = graphe.taches.at(k-1);
+			cout << endl << tache << endl;
+			tache.duree = saisirint("dur\202e = ",0);
+			cout << "Modification enregistr\202e !" << endl;
+			system("PAUSE");}
 		break;
-		case 3 :
-		break;}}}
+		case 3 :{
+			int k = saisirint("num\202ro de t\203che = ",1,graphe.taches.size());
+			Tache &tache = graphe.taches.at(k-1);
+			cout << endl << tache << endl;
+			char *str = saisirstr("contraintes = ","0123456789 ");
+			tache = Tache(tache.num,tache.duree,str);
+			free(str);
+			cout << "Modification enregistr\202e !" << endl;
+			system("PAUSE");}
+		break;
+		case 4 :{
+			int k = saisirint("num\202ro de t\203che = ",1,graphe.taches.size());
+			cout << endl << graphe.taches.pop(k-1) << endl;
+			cout << "T\203che supprim\202e !" << endl;
+			system("PAUSE");}
+		break;}
+		if(n!=0) graphe.arcs = Graphe::getarcs(graphe.taches);}}
 
 void menu_contrainte(Liste<Graphe> &graphes){
 	int n=1;
@@ -116,7 +150,6 @@ void menu_contrainte(Liste<Graphe> &graphes){
 				graphes.get().tot();
 				cout << endl << "----------------------------------------" << endl << endl;}
 			system("PAUSE");
-			//A faire
 		break;
 		case 4 :
 			//A faire

@@ -132,19 +132,15 @@ Liste<Arc> Graphe::getarcs(Liste<Tache> taches){
 	Liste<Arc> arcs;
 	while(taches.foreach()){
 		if(taches.get().contraintes.size()==0){
-			Arc arc(0,taches.get().num,0);
-			arcs.push(arc);}}
+			arcs.push(Arc(0,taches.get().num,0));}}
 	bool test;
 	for(int i=1; i<=taches.size(); i++){
 		test = true;
 		while(taches.foreach()){
 			if(taches.get().contraintes.contains(i)){
-				Arc arc(i,taches.get().num,taches.at(i-1).duree);
-				arcs.push(arc);
+				arcs.push(Arc(i,taches.get().num,taches.at(i-1).duree));
 				test = false;}}
-		if(test){
-			Arc arc(i,taches.size()+1,taches.at(i).duree);
-			arcs.push(arc);}}
+		if(test) arcs.push(Arc(i,taches.size()+1,taches.at(i).duree));}
 	return arcs;}
 
 Graphe Graphe::lirecontrainte(FILE *file){
